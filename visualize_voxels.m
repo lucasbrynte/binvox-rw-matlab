@@ -31,6 +31,7 @@ TRI = zeros(12*length(X), 3);
 % For each voxel center (X(k),Y(k),Z(k)), create a 1x1x1 meshed cube around it 
 for k = 1:length(X)
     V_k = bsxfun(@plus,cube_verts,[X(k),Y(k),Z(k)]-0.5);
+    % V_k = cube_verts + [X(k),Y(k),Z(k)]-0.5;
     V(8*(k-1)+1 : 8*k, :) = V_k;
     TRI(12*(k-1)+1 : 12*k, :) = cube_tri+8*(k-1);
 end
