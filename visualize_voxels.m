@@ -35,9 +35,9 @@ for k = 1:length(X)
     TRI(12*(k-1)+1 : 12*k, :) = cube_tri+8*(k-1);
 end
 
-% figure;
-dims = size(binary_vol);
-trisurf(TRI, V(:,1), V(:,2), V(:,3)); axis image; axis([1 dims(2) 1 dims(1) 1 dims(3)]);
-
+if nargout == 0
+    % figure;
+    dims = size(binary_vol);
+    trisurf(TRI, V(:,1), V(:,2), V(:,3)); axis image; axis([1 dims(2) 1 dims(1) 1 dims(3)]);
 end
-
+end
